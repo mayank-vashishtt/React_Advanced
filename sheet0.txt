@@ -30,6 +30,43 @@ after react (no SEO, browser render of JS, no routing)
 these framework -- nextJS, gatsby , remix, freeAPI.app(chai and code)
 
 
+NOTES  
 
 
 
+vite application / parcel are bundlers --  npm create vite@latest -- quite fast --- brought on file but didnt install , do npm i  -- npm run dev(dev is script name in package.json)
+
+
+CRA(create-react-app) vs vite
+
+npx create-react-app -- it is little bit bulky  -- npx create-react-app basicrect  --- OG , installed it  -- npm run start 
+
+
+react -- react-dom(talk to my dom in my browser), react-native(talk to mobile), 3D application to here
+
+
+build command are used to deploy these on vercel or netify 
+
+react app is called spa -- single page applcation 
+
+in jsx you can return only one element, use parent and child relation or <> </> use this 
+
+in vite, you should use jsx for return like thing and function name should be in capital even having filename in capital is good practice 
+
+in vite, there is manual script and in cra there is custom script
+
+if you give hello {usename} --- will take username from inside that function 
+
+use state -- first one is variable .. second one is method 
+
+batching -- to avoid it use callbacks 
+
+react fiber architecture  -- read docs
+
+reconcilliation -- read docs
+
+tailwind css
+
+we have to install all npm and all lib that we need in root dir where package.json is 
+
+ 
