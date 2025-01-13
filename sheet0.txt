@@ -70,3 +70,70 @@ tailwind css
 we have to install all npm and all lib that we need in root dir where package.json is 
 
  
+
+ -------- 
+
+
+
+ react is the most used and famous js library 
+
+
+ --- react js with the help of cdn in html css and js code
+ dom 
+
+var root = document.querySelector('#root')
+var h1= document.createElement('h1')
+h1.innerHTML = 'hello from JS' 
+root.appendChild(h1)
+
+
+web app --- react dom and react library 
+
+
+why react work on virutal DOM 
+
+The real DOM is not used directly for updates in React due to several reasons:
+
+Performance: The real DOM is slow to update. Each change to the DOM can cause the browser to re-render the entire page, which is 
+computationally expensive and can lead to performance bottlenecks.
+
+Inefficiency: Direct manipulation of the real DOM can be inefficient, especially when dealing with frequent updates. 
+Each change triggers a reflow and repaint, which can degrade performance.
+
+Complexity: Managing the state and updates directly on the real DOM can be complex and error-prone. 
+The virtual DOM abstracts this complexity, making it easier to reason about state changes and updates.
+
+Batching: The virtual DOM allows React to batch updates and apply them in a single operation, reducing the number of reflows and repaints.
+
+Virtual DOM: React creates an in-memory representation of the real DOM called the virtual DOM. This is a lightweight copy of the actual DOM.
+
+Efficient Updates: When the state of a component changes, React updates the virtual DOM first. It then compares the virtual DOM with 
+a snapshot of the previous virtual DOM (a process called "diffing").
+
+Minimal Changes: After identifying the differences, React calculates the most efficient way to update the real DOM. 
+This minimizes the number of changes needed, which improves performance.
+
+Batch Updates: React batches multiple updates together to reduce the number of re-renders, further enhancing performance.
+
+-----
+cdn 
+
+React.createElement('h1', null(property), "hello from React" )
+
+var parent = React.querySelector('#parent')
+
+var root = ReactDOM.createRoot(parent)
+
+root.render(h1)
+
+
+-----
+
+
+npm create react-app 
+
+npm create vite
+
+vite is a bundler that helps us to make react js folder
+
+JSX -- Javascript XML -- combination of JS and HTML 
