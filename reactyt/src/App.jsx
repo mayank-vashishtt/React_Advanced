@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+
+  // let user  = "Mayank"
+
+
+  // const changeUser = () => {
+  //   console.log(user);
+  //   user = "Sanvi"
+  //   console.log(user);  // value is changing but not reflecting in UI
+  //   // we have to use useState hook to reflect the changes in UI
+  // }
+  // // hello() // will print Hello in console, but in strict mode it will give 2 times hello
+
+
+  const [user, setUser] = useState("Mayank")
+
+  const changeUser = () => {
+    console.log(user);
+    setUser("Sanvi")
+    console.log(user);
+  }
+
+  
+
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <h1>Username is {user}</h1 >
+      <button onClick={changeUser}>Change User</button>
+      {/* <button onClick={hello()}>Change User</button>  here without clicking it, it will give me hello */}
+    </div>
   )
 }
 
 export default App
+
+
+
+// 

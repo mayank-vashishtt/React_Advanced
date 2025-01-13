@@ -137,3 +137,12 @@ npm create vite
 vite is a bundler that helps us to make react js folder
 
 JSX -- Javascript XML -- combination of JS and HTML 
+
+
+//rafce
+
+
+strict mode come in use during production time 
+
+
+hooks -- are special type of function that provide powerful feature in react like state management 
