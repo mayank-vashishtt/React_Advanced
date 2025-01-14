@@ -58,19 +58,33 @@
 
 // // 
 
-import React from 'react'
+import React, { useState } from 'react'
+
 
 const App = () => {
+
+  const [username, setUsername] = useState('')
 
   const submitHandler = (e) => {
     e.preventDefault()
     console.log('Form Submitted');
+    console.log(username);
+
+    setUsername('')
+    
     
   }
   return (
     <div>
      <form onSubmit={ (e) => {submitHandler(e)}}>
-       <input className='px-4 py-3 text-xl m-5 rounded-xl' type="text" placeholder='Enter name' />
+       <input onChange={(e) =>{
+        // console.log("hey");
+        // console.log(e.target.value);
+        setUsername(e.target.value)
+        //it is called 2 way binding 
+        
+       }}
+       value={username} className='px-4 py-3 text-xl m-5 rounded-xl' type="text" placeholder='Enter name'  />
        <br />
        <button className='px-10 py-3 text-xl font-semibold m-4 bg-purple-800 rounded-xl text-cyan-50'> Submit </button>
      </form>
