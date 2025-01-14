@@ -156,3 +156,11 @@ fragments are empty tags like this <> </> use in place of div in react they work
 axios 
 it is the tool that help us to call apis 
 data comes in the form of promises 
+
+
+useEffect 
+basically handles work in sideline 
+
+
+--- 
+react router dom 
