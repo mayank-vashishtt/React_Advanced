@@ -146,3 +146,5 @@ strict mode come in use during production time
 
 
 hooks -- are special type of function that provide powerful feature in react like state management 
+
+fragments are empty tags like this <> </> use in place of div in react they work like an wrapper 
