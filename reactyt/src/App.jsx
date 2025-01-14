@@ -15,6 +15,7 @@ const App = () => {
 
 
   const [user, setUser] = useState("Mayank")
+  const [num, setNum] = useState(0);
 
   const changeUser = () => {
     console.log(user);
@@ -27,10 +28,20 @@ const App = () => {
 
 
   return (
+    // <div>
+    //   <h1>Username is {user}</h1 >
+    //   <button onClick={changeUser}>Change User</button>
+    //   {/* <button onClick={hello()}>Change User</button>  here without clicking it, it will give me hello */}
+    // </div>
     <div>
-      <h1>Username is {user}</h1 >
-      <button onClick={changeUser}>Change User</button>
-      {/* <button onClick={hello()}>Change User</button>  here without clicking it, it will give me hello */}
+      <h1>Number is {num} </h1>
+      <button onClick={function(){
+        setNum(num + 1)
+      }}>Increment number </button>
+      <br />
+      <button onClick={function(){
+        setNum(num - 1)
+      }}>Decrement number </button>
     </div>
   )
 }
