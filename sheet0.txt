@@ -158,10 +158,6 @@ it is the tool that help us to call apis
 data comes in the form of promises 
 
 
-useEffect 
-basically handles work in sideline 
-
-
 --- 
 react router dom 
 
@@ -173,3 +169,104 @@ used is big size application or medium may be
 it is built-in react 
 
 
+------
+
+useEffect 
+basically handles work in sideline 
+The useEffect hook lets you perform side effects in functional components. Side effects can include:
+
+Fetching data from an API.
+Updating the DOM.
+Setting up subscriptions or timers.
+Essentially, useEffect allows your component to do something after rendering.
+
+
+useEffect(() => {
+  // Your code here (side effect logic)
+}, [dependencies]);
+
+
+Breaking it Down
+Callback Function:
+
+The first argument is a function where you put your side effect code.
+This function runs after the component renders.
+Dependency Array:
+
+The second argument is an array of dependencies.
+It tells React when to run the effect. If the value of any dependency changes, the effect runs again.
+
+
+When to Use useEffect
+1. Run Once After Initial Render
+Use an empty dependency array []. This is similar to componentDidMount in class components.
+useEffect(() => {
+  console.log("Component mounted");
+}, []); // Runs only once
+
+2. Run After Every Render
+If no dependency array is provided, the effect runs after every render.
+useEffect(() => {
+  console.log("Component rendered");
+});
+
+3. Run Only When Certain Values Change
+Add specific variables in the dependency array. The effect will run when those variables change.
+useEffect(() => {
+  console.log("The count changed:", count);
+}, [count]); // Runs only when `count` changes
+
+------
+
+useRef
+
+What is useRef?
+Think of useRef as a "box" you can use to store something (like a DOM element or a value).
+This "box" holds onto its value even if your component re-renders.
+Changing the value inside the box does not make your component re-render.
+
+Why Use useRef?
+Access an HTML element directly (like focusing an input field or scrolling to a section).
+Store a value that you don’t want React to track or re-render for, like a timer ID or a count.
+
+
+import { useRef } from "react";
+
+const ref = useRef(initialValue);
+ref.current is where the value is stored.
+You can read or update this value whenever you want.
+
+
+import { useRef } from "react";
+
+function App() {
+  const inputRef = useRef(null); // Create a "box" to store the input element
+
+  const focusInput = () => {
+    inputRef.current.focus(); // Use the box to access the input and focus it
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" placeholder="Type here..." />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+}
+
+What’s Happening?
+useRef creates a box (inputRef).
+The ref connects this box to the <input>.
+When you click the button, the box (inputRef.current) lets you focus the input.
+
+
+2. Keep Track of a Value Without Re-rendering
+Sometimes, you need to track something (like a counter) but don’t want the component to re-render when it changes.
+
+
+Key Points to Remember
+useRef doesn’t trigger re-renders: Updating ref.current won’t make your component update.
+It’s like a persistent "box": The value in the box stays the same even if your component updates.
+Use it for special cases:
+Directly interacting with HTML elements (like focusing).
+Storing things like timer IDs or previous values.
